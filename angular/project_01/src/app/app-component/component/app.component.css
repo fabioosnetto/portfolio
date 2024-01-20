@@ -1,0 +1,20 @@
+nav {
+   width: 100%;
+   border-bottom: 1px solid #636363;
+   margin-bottom: 3rem;
+}
+nav ul {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   list-style-type: none;
+}
+nav ul li {
+   position: relative;
+   padding: 1.5rem;
+}
+nav ul li:hover a {
+   color: white;
+   text-shadow: 0px 0px 10px white;
+   width: 100%;
+}

@@ -1,0 +1,45 @@
+ul.users-list {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   list-style: none;
+}
+ul.users-list li.user-card {
+   width: 50%;
+   max-width: 320px;
+   padding: 1rem;
+}
+ul.users-list li.user-card > div {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 2rem 1rem;
+   border: 1px solid #b0b0b0;
+   border-radius: .5rem;
+}
+ul.users-list li.user-card > div:hover {
+   cursor: pointer;
+   transform: translate(.1rem, .1rem);
+   box-shadow: 0px 0px 13px 5px #ffffff3b;
+}
+ul.users-list li.user-card .user-id {
+   align-self: flex-start;
+   padding: 0rem 1rem 1rem 1rem;
+}
+ul.users-list li.user-card .user-image {
+   font-size: 4rem;
+   height: 10rem;
+   width: 10rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid #636363;
+   border-radius: 50%;
+   margin-bottom: 2.5rem;
+}
+ul.users-list li.user-card div.user-description {
+   display: flex;
+   flex-direction: column;
+}

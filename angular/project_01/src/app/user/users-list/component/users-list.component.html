@@ -1,0 +1,37 @@
+<div class="page-container">
+   <header>
+      <h1>Users List</h1>
+   </header>
+
+   <main>
+      
+      <ng-container *ngIf="!loadingPage && !noResult; else pageNoResponse">
+         <ul class="users-list">
+            <ng-container *ngFor="let user of users">
+               <li class="user-card" (click)="seeUser(user.id ? user.id : -1)">
+                  <div>
+                     <div class="user-id">
+                        <span>{{ user.id }}</span>
+                     </div>
+                     <div class="user-image">{{ user.username?.slice(0,1)?.toLocaleUpperCase() }}</div>
+                     <div class="user-description">
+                        <span><strong>{{ user.username }}</strong></span><br>
+                        <span>{{ user.firstName }} {{ user.lastName }}</span>
+                        <span>{{ user.city }} - {{ user.state }}</span>
+                        <span>Status: {{ user.status === '1' ? 'Active' : 'Inactive' }}</span>
+                     </div>
+                  </div>
+               </li>
+            </ng-container>
+            
+         </ul>
+      </ng-container>
+
+
+      <ng-template #pageNoResponse>
+         <ng-container *ngIf="loadingPage && !noResult">Wait a moment...</ng-container>
+         <ng-container *ngIf="noResult">No result for the request :(</ng-container>
+      </ng-template>
+   </main>
+</div>
+

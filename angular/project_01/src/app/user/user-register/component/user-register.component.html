@@ -1,0 +1,64 @@
+<div class="page-container">
+   <header>
+      <h1>{{ pageTitle }}</h1>
+   </header>
+
+   <main>
+
+      <ng-container *ngIf="userForm && !loadingPage && !noResult; else pageNoResponse">
+         <form id="user-form" (ngSubmit)="saveUser()" [formGroup]="userForm" (change)="onFormChange()">
+            
+            <div class="flex-row">
+               <div class="col-12 form-field-container">
+                  <label for="username">Username</label>
+                  <input id="username" type="text" formControlName="username">
+               </div>
+            </div>
+
+            <div class="flex-row">
+               <div class="col-6 form-field-container">
+                  <label for="first-name">First Name</label>
+                  <input id="first-name" type="text" formControlName="firstName">
+               </div>
+               <div class="col-6 form-field-container">
+                  <label for="last-name">Last Name</label>
+                  <input id="last-name" type="text" formControlName="lastName">
+               </div>
+            </div>
+
+            <div class="flex-row">
+               <div class="col-6 form-field-container">
+                  <label for="city">City</label>
+                  <input id="city" type="text" formControlName="city">
+               </div>
+               <div class="col-3 form-field-container">
+                  <label for="state">State</label>
+                  <input id="state" type="text" formControlName="state">
+               </div>
+               <div class="col-3 form-field-container">
+                  <label for="status">Status</label>
+                  <input id="status" type="text" formControlName="status">
+               </div>
+            </div>
+
+            <div class="flex-row">
+               <button type="submit" class="save">
+                  Save
+               </button>
+
+               <button type="button" class="delete" (click)="deleteUser()">
+                  Delete User
+               </button>
+            </div>
+
+         </form>
+      </ng-container>
+
+      <ng-template #pageNoResponse>
+         <ng-container *ngIf="loadingPage && !noResult">Wait a moment...</ng-container>
+         <ng-container *ngIf="noResult">No result for the request :(</ng-container>
+      </ng-template>
+
+   </main>
+</div>
+

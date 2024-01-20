@@ -1,0 +1,75 @@
+* {
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 16px;
+   color: #e5e5e5;
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   transition: all .5s ease;
+}
+
+html { background-color: #101010; }
+header { margin-bottom: 2rem; }
+main { width: 100%; }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.3rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1.1rem; }
+button {
+   border: none;
+   border-radius: .3rem;
+   box-shadow: none;
+   padding: .5rem 1rem;
+   cursor: pointer;
+}
+a { text-decoration: none; }
+
+.page-container {
+   width: 100vw;
+   padding: 1rem 2rem;
+}
+
+.flex-row {
+   width: 100%;
+   display: flex;
+}
+.col-3  { width: 25%;  }
+.col-6  { width: 50%;  }
+.col-12 { width: 100%; }
+
+.form-field-container {
+   display: flex;
+   flex-direction: column;
+   padding: 1rem;
+}
+.form-field-container label {
+   text-indent: .5rem;
+   margin-bottom: .5rem;
+}
+.form-field-container input, .form-field-container select, .form-field-container textarea, .form-field-container output {
+   background-color: #1a1a1a;
+   padding: .7rem;
+   border: 1px solid #515151;
+   border-radius: .5rem;
+}
+.form-field-container:hover input:not([disabled]), .form-field-container:hover select:not([disabled]), .form-field-container:hover textarea:not([disabled]), .form-field-container:hover output:not([disabled]), .form-field-container input:not([disabled]):focus, .form-field-container select:not([disabled]):focus, .form-field-container textarea:not([disabled]):focus, .form-field-container output:not([disabled]):focus {
+   background-color: #4b4b4b;
+   border-color: white;
+}
+.form-field-container input[disabled], .form-field-container select[disabled], .form-field-container textarea[disabled], .form-field-container output[disabled] {
+   background-color: black;
+   border-color: #383838;
+}
+
+button.save {
+   background-color: green;
+   margin: .5rem;
+   margin-top: 2rem;
+}
+button.delete {
+   background-color: red;
+   margin: .5rem;
+   margin-top: 2rem;
+}
