@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="{{ url_for('static', filename='img/three_candles.ico') }}" type="image/x-icon">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+      <title>Three Candles Patterns</title>
+   </head>
+
+   <body>
+      <script src="../static/js/index.js"></script>
+
+      <header>
+         <div id="header-content">
+            <div class="semi-trans">
+
+               <!-- Nav Options -->
+               <nav>
+                  <button type="menu" onclick="toggleNavMenu('nav .nav-menu-container')">
+                     <span class="material-symbols-outlined">menu</span>
+                  </button>
+
+                  <div class="nav-menu-container collapse">
+                     <ul id="nav-menu">
+                        <li><a href="#brief" class="smooth-scroll">Brief</a></li>
+                        <li><a href="#how-to" class="smooth-scroll">Usage</a></li>
+                        <li><a href="#result" class="smooth-scroll">Result</a></li>
+                        <li><a href="#data-analysis" class="smooth-scroll">Analysis</a></li>
+                        <li><a href="#ai" class="smooth-scroll">AI Model</a></li>
+                        <li><a href="#is-usefull" class="smooth-scroll">Recomendation</a></li>
+                     </ul>
+                  </div>
+               </nav>
+
+               <!-- Title -->
+               <h1>
+                  <span>3</span>
+                  <span>Candlesticks Patterns</span>
+               </h1>
+
+               <!-- Brief -->
+               <section id="brief" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+                  <div class="panel-container">
+
+                     <!-- 3 Black Crows -->
+                     <article id="black-crows-brief" class="panel">
+                        <div class="content">
+                           <h2>3 Black Crows</h2>
+                           <p>The three black crows candlestick pattern is composed by three bear candles.</p>
+                        </div>
+
+                        <div class="img-container">
+                           <div class="img" role="img"></div>
+                        </div>
+                     </article>
+
+                     <!-- 3 White Soldiers -->
+                     <article id="white-soldiers-brief" class="panel">
+                        <div class="content">
+                           <h2>3 White Soldiers</h2>
+                           <p>The three white soldiers candlestick pattern is composed by three bull candles.</p>
+                        </div>
+
+                        <div class="img-container">
+                           <div class="img" role="img"></div>
+                        </div>
+                     </article>
+
+                  </div>
+               </section>
+
+            </div>
+         </div>
+      </header>
+
+      <!-- MAIN -------->
+      <main>
+
+         <!-- General -->
+         <section>
+
+            <!-- How to Apply -->
+            <article id="how-to" class="panel" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+               <h2>How to Apply?</h2>
+               <p>
+                  The utilities of these candlestick patterns may change according to the case. Volume, candle size, trend strength... All these variables can be used. However, here you are going to see the simple utility, using only the candlestick pattern, without checking any other paramethers, for getting only the <strong>real pattern result</strong>. 
+               </p>
+
+               <div class="apply-example">
+                  <p>
+                     The tests, made by <a href="https://www.metatrader5.com/en/automated-trading/robots-indicators" target="_blank">Expert Advisors</a> (native trading bots of Meta Trader Platform), have been used with <strong>1x1 risk management</strong>, considering the pattern amplitude (max to low of the 3 candles) and one trade by time.
+                  </p>
+                  <div class="img-container">
+                     <div class="img" role="img"></div>
+                  </div>
+               </div>
+            </article>
+         
+            <!-- Result -->
+            <article id="result" class="transparent-panel" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+               <h2>Result</h2>
+               <p>The result shows a positive aspect. Isn't a perfect strategy and nor must be. Considering this is a simple and isolated candlestick pattern, it's great enough a positive result, being greater than 50%. However, pay attention: isn't a perfect result, so, the pattern can't be used outside context.</p>
+               
+               <ul>
+                  <li class="panel">
+                     <strong>Profit</strong>
+                     <div class="gain-box">
+                        <span>x.x%*</span>
+                     </div>
+                  </li>
+                  <li class="panel">
+                     <strong>Loss</strong>
+                     <div class="loss-box">
+                        <span>x.x%*</span>
+                     </div>
+                  </li>
+                  <li class="panel">
+                     <strong>Trades</strong>
+                     <div class="info-box">
+                        <span>xxxx*</span>
+                     </div>
+                  </li>
+               </ul>
+            </article>
+         
+         </section>
+
+         <!-- Boosted -->
+         <section>
+
+            <!-- Data Analysis -->
+            <article id="data-analysis" class="flex-column transparent-panel" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+               <h2>Boosted with Data Analysis</h2>
+               <p>Now, if you have read the strategy result (<a href="#result" target="_self">go to the result section</a>) you know that these patterns of 3 candles are not very valid by itself. So, thinking about, we can try to grow up the strategy result by using data analysis.</p>
+                  
+               <p>Data analysis is a way for considering more paramethers that can be usefull for the using of these patterns. In the anlisys made were used more 12 paramethers for trying to adjust and get some signal that creates other combination of patterns in addition to the simple strategy.</p>
+
+               <p>Combining and analyzing the data requested from each trade, was it noticed that 3 main paramethers have a direct impact on the strategy assertivity.</p>
+               
+               <ul>
+                  <li class="panel"><strong>The direction of MMA20</strong> on the exactly signal of trade must be the opposite of trading direction (eg.: buy signal, the moving average must have its direction to the sell side);</li>
+
+                  <li class="panel"><strong>The previous price closing</strong> must be opposite side of the MMA20 and MMA200 relative to the trade direction (eg.: buy signal, closing of previous candlestick must be lower than the 2 moving averages);</li>
+                  
+                  <li class="panel"><strong>The price must be in the opposite side</strong> realative to the previous day closing (eg: sell signal, price must be up to the previous day closing).</li>
+               </ul>
+
+               <div class="analysis-result">
+                  <div class="panel">
+                     <div class="panel">
+                        <p>Using that test, grow up result in x.x%*</p>
+                     </div>
+                  </div>
+               </div>
+
+            </article>
+
+            <!-- AI Model -->
+            <article id="ai" class="transparent-panel" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+               <h2>Boosted with AI Model</h2>
+               <p>
+                  Likely to the data analysis, an AI model was made looking for growing up the simple candlestick strategy. The main difference is that the AI model can consider more paramethers at the same time, having a greater complexity level. 
+               </p>
+
+               <p>
+                  For the made tests, was used 2 AI models: the <strong>Tree Model</strong> (<a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target="_blank">Random Forest</a>) and the <strong>KNN Model</strong> (<a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html" target="_blank">Known Neighbors</a>).
+               </p>
+                  
+               <p>
+                  Comparing how these 2 models works, the tree model makes a complex questionary creating a tree that takes one response after each other, this way, creating a combination of paramheters to making the trade. However, using the KNN model, the combination is made for the likely of paramethers of each other.
+               </p>
+
+               <p>About the results we have a great growing up getting a final assertivity of x.x%* with the Tree Model.</p>
+            </article>
+         
+         </section>
+
+         <!-- Usability -->
+         <section id="usability">
+            <article id="is-usefull" class="transparent-panel" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+               <h2>Is Usefull?</h2>
+               <p>So, after these tests and analisys, we can look for some details. The simple candlestick pattern must not be used by itself as a trading strategy, considering that isn't a lucrative and proffessional choose. However, using with a great context, this can be a decisive signal for making your trades. Not necessarily using the paramethers that tests showed here have been used but studying for professional trading content and making your own paramethers.</p>
+            </article>
+         </section>
+      </main>
+      <!-- /MAIN ------->
+
+
+      <!-- Known Issues -->
+      <section id="issues">
+         <article id="known-issues" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+            <h2>Known Issues</h2>
+            <ul class="panel flex-column">
+               <li>The provided tests were based on a unique trade per time. That is, if more one signal was triggered when positioned on a trade, the new signal have no matter. So, a new trade will not be opened until the current have your closing;</li>
+               <li>The AI models have used some paramethers that not every trades will have the possibility for being used at real time.</li>
+            </ul>
+         </article>
+      </section>
+
+      <footer>
+         <div id="contact-me-container">
+            <span>Contact me</span>
+
+            <div class="icons">
+
+               <!-- WhatsApp -->
+               <a href="https://wa.me/5548998416704?/text=Hello!%20I%20saw%20you%20website%20about%203%20candles%20pattern%20and%20here%20I%20am%20:)" target="_blank">
+                  <i class="icon whatsapp-icon"></i>
+               </a>
+
+               <!-- Instagram -->
+               <a href="https://www.instagram.com/fabio.orione" target="_blank">
+                  <i class="icon instagram-icon"></i>
+               </a>
+
+               <!-- Github -->
+               <a href="https://github.com/fabioosnetto" target="_blank">
+                  <i class="icon github-icon"></i>
+               </a>
+
+            </div>
+         </div>
+
+         <span><sup>*</sup> Data unfortunately lost :(</span><br>
+         
+         <span>Developed for studying objective.</span>
+         <span>Copright for Fabio O.S. Netto</span>
+      </footer>
+
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+         AOS.init();
+      </script>
+   </body>
+</html>

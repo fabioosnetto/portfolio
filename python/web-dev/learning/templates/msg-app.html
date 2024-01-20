@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="" type="image/x-icon">
+      <link rel="stylesheet" href="{{ url_for('static', filename='msg-app.css') }}">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js" integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <title>Open Chat</title>
+   </head>
+
+   <body>
+      <script type="text/javascript">
+         $(document).ready(() => {
+
+            const socket = io('192.168.15.107:5000')
+
+            socket.on('connect', () => {
+               console.log('Connected!')
+            });
+
+            socket.on('message', (msg) => {
+               $('#messages').append($('<p>').text(msg))
+            });
+
+            $('#submit-btn').on('click', () => {
+               socket.send(`${$('#username-field').val()}: ${$('#msg-field').val()}`);
+            });  
+            $('#msg-field').on('keyup', (event) => {
+               if(event.key === 'Enter') {
+                  socket.send(`${$('#username-field').val()}: ${$('#msg-field').val()}`);
+               }
+            });           
+         });
+      </script>
+
+      
+      <!-- Header -->
+      <section id="header">
+         <h1>Open Chat</h1>
+      </section>   
+
+      <!-- Messages -->
+      <section id="messages">
+      </section>
+
+      <!-- Message Input -->
+      <section id="input">
+         <div class="col-md-3">
+            <input type="text" name="username-field" id="username-field" placeholder="Username">
+         </div>
+         
+         <div class="col-md-8">
+            <input type="text" name="msg-field" id="msg-field" placeholder="Write your message">
+         </div>
+         
+         <div class="col-md-1">
+            <button type="submit" id="submit-btn">></button>
+         </div>
+      </section>
+
+   </body>
+</html>

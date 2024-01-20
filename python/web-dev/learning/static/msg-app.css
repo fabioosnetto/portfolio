@@ -1,0 +1,120 @@
+* {
+   padding: 0;
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   color: rgb(224, 224, 224);
+   word-wrap: break-word;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   width: 100vw;
+   background-color: rgb(0, 2, 32);
+   overflow: hidden;
+}
+
+.col-md-1 {
+   width: 8.33%;
+   padding: 1em;
+}
+.col-md-2 {
+   width: 16.66%;
+   padding: 1em;
+}
+.col-md-3 {
+   width: 24.99%;
+   padding: 1em;
+}
+.col-md-4 {
+   width: 33.33%;
+   padding: 1em;
+}
+.col-md-6 {
+   width: 50%;
+   padding: 1em;
+}
+.col-md-7 {
+   width: 58.33%;
+   padding: 1em;
+}
+.col-md-8 {
+   width: 66.66%;
+   padding: 1em;
+}
+
+#header, #messages, #input {
+   position: fixed;
+   width: 100%;
+}
+#header {
+   height: 10%;
+   width: 100%;
+   top: 0;
+   background-color: rgb(24, 24, 24);
+   text-align: center;
+}
+#messages {
+   height: 80%;
+   width: 100%;
+   background-color: rgb(32, 32, 32);
+   overflow: hidden;
+   overflow-y: auto;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   align-items: flex-start;
+   margin-bottom: 1,5em;
+}
+#input {
+   height: 10%;
+   width: 100%;
+   bottom: 0;
+   background-color: rgb(24, 24, 24);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+h1 { 
+   padding: 1em;
+}
+#messages p {
+   background-color: rgb(102, 102, 102);
+   padding: 1em;
+   margin-top: 1em;
+   margin-left: 1em;
+   border-radius: 35px;
+   max-width: 60%;
+}
+input {
+   color: rgb(19, 19, 19);
+   width: 100%;
+   height: 100%;
+   border-radius: 35px;
+   padding: 1em;
+   border: none;
+   box-shadow: none;
+}
+#input button {
+   color: rgb(19, 19, 19);
+   width: 100%;
+   height: 100%;
+   border-radius: 35px;
+   border: none;
+   box-shadow: none;
+   padding: 1em;
+}
+#input::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   transform: translateY(-100%);
+   background-color: rgb(32, 32, 32);
+   width: 100%;
+   padding: .5em;
+}
